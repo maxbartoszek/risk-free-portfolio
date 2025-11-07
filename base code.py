@@ -16,6 +16,10 @@ from datetime import datetime
 df = pd.read_csv('Tickers_Example.csv') # test with Tickers_Example.csv?
 ticker_lst = list(df.iloc[:,0])
 
+# Filter out tickers that don't exist; include only valid tickers
+
+# Apply a filter to remove all stocks with volumes below 5000
+
 # Get the daily data over chosen timeframe (2025-10-24 to 2025-10-31 for testing?)
 start_date = '2025-10-24' # change to Nov 21 2025
 end_date = '2025-10-31' # change to Nov 28 2025
@@ -25,31 +29,23 @@ daily_data = yf.download(
     start=start_date,
     end=end_date)
 
-# Include only valid US and Canadian comapnies that have listed stocks in these markets
+# Get/calculate volatility (std), beta, market cap, and sectors
 
+# Use the weighted scoring algorithm in the doc to provide a score /100 per stock
 
-# Apply the filter for > 5000 volume (drop months with < 18 trading days)
+# After scoring, put all stocks in lists based on sector
 
+# Take the top 5 from each sector (based on their score /100) and put them in a new dataframe
 
-# Get current prices, market cap, and sectors
+# Then return the top 25
 
+# Use minimum variance portfolio optimization to determine optimal weights per stock
 
-# Calculate daily returns, standard deviation, beta
+# Calculate the shares per stock based on weightings and transaction costs
 
-
-# Rank the ticker list by volatility, filter for lowest
-
-
-# Check for the constraints we’re given and choose the 20-25 ‘best’ stocks
-
-
-# Give everything equal weights
-
-
-# Calculate the shares needed and transaction costs
-
+# Determine what will actually be the transaction cost (What is lower)
+# Subtract that from the amount allocated to the company, and determine new total shares
 
 # Verify that we meet all the constraints (one small cap, no more than 40% in one sector, etc.)
-
 
 # Load final portfolio
