@@ -13,19 +13,22 @@ import random
 from datetime import datetime
 
 # Load the tickers
-df = pd.read_csv('Tickers.csv')
-ticker_lst = list(df)
+df = pd.read_csv('Tickers_Example.csv') # test with Tickers_Example.csv?
+ticker_lst = list(df.iloc[:,0])
 
-# Get the daily data over chosen timeframe
-start_date = 
-end_date = 
+# Get the daily data over chosen timeframe (2025-10-24 to 2025-10-31 for testing?)
+start_date = '2025-10-24' # change to Nov 21 2025
+end_date = '2025-10-31' # change to Nov 28 2025
 
 daily_data = yf.download(
     tickers=ticker_lst,
-    start=start_date
+    start=start_date,
     end=end_date)
 
-# Apply the filter for > 5000 volume
+# Include only valid US and Canadian comapnies that have listed stocks in these markets
+
+
+# Apply the filter for > 5000 volume (drop months with < 18 trading days)
 
 
 # Get current prices, market cap, and sectors
