@@ -93,23 +93,42 @@ for ticker in filtered_lst:
 # Quick look at the result
 print(metrics_df.head())
 
-# Use the weighted scoring algorithm in the doc to provide a score /100 per stock
+# Use the weighted scoring algorithm in the doc to provide a score /100 per stock; take from google docs
+# Ammar
 
 # After scoring, put all stocks in lists based on sector
+# Ammar
 
 # Take the top 5 from each sector (based on their score /100) and put them in a new dataframe
+# Wendi
 
 # Then return the top 25
+# Wendi
 
 # Make the LAST ONE A SMALL CAP GUARANTEED
+# Wendi
 
 # Use minimum variance portfolio optimization to determine optimal weights per stock
 
 # Calculate the shares per stock based on weightings and transaction costs
+# Max
 
-# Determine what will actually be the transaction cost (What is lower)
+# Determine what will actually be the transaction cost (What is lower)\
+#Max
 # Subtract that from the amount allocated to the company, and determine new total shares
+#Max
 
 # Verify that we meet all the constraints (one small cap, no more than 40% in one sector, etc.)
+#Max
 
 # Load final portfolio
+# All of us!
+
+#WHAT WE MUST DO
+# for each subpart of our to do list, write a 3-5 bullet-point explanation of why we are doing specific things
+# basing it on real financial data and sources
+# map each ticker to the sector that they are from in a dictionary
+# make sure last is a small cap, its okay if multiple fit this description but last one MUST be small cap
+# maybe find other ways to pick stocks if necessary
+# max wants 25 stocks
+# 
