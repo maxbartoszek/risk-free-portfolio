@@ -99,6 +99,22 @@ print(metrics_df.head())
 # After scoring, put all stocks in lists based on sector
 
 # Take the top 5 from each sector (based on their score /100) and put them in a new dataframe
+top5_count = 0
+sector_top5 = pd.DataFrame()
+def sector_top5(df,sector):
+    for i in range(len(df)):
+        if df.loc[i,'Sector'] == sector:
+            top5_count += 1
+            if top5_count > 5:
+                if 
+            else:
+                sector_top5 = pd.concat()
+
+
+
+
+for 
+
 
 # Then return the top 25
 
