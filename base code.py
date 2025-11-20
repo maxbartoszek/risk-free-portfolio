@@ -76,7 +76,7 @@ metrics_df = pd.DataFrame(columns=['Ticker', 'Volatility', 'Beta', 'MarketCap', 
 # ---- Market index for beta ----
 market_index = "^GSPC"
 market_hist = yf.download(market_index, start=start_date, end=end_date)
-market_prices = market_hist["Adj Close"].dropna()
+market_prices = market_hist["Close"].dropna()
 market_returns = market_prices.pct_change().dropna()
 
 # ---- Loop through filtered tickers ----
@@ -223,10 +223,10 @@ def sector_top5(df,sector):
             else:
                 sector_top5 = pd.concat([sector_top5,df[ticker]])
 
-sector_lst = df['Sector'].unique # creates a list of all the sectors
+sector_lst = list(sector_dict.keys()) # creates a list of all the sectors
 all_sectors_top5 = pd.DataFrame()
 for sector in sector_lst:
-    df_sector_top5 = sector_top5(df,sector)
+    df_sector_top5 = sector_top5(scored_df,sector)
     all_sectors_top5 = pd.concat([all_sectors_top5,df_sector_top5])
 
 # Then return the top 25
@@ -250,7 +250,7 @@ elif (market_cap < small_cap).any():
 # get the best scoring small cap from the dataframe of the top 5 of all sectors and replace it with the stock of the last row of the top 25 stocks            
 else:
     small_cap_df = pd.DataFrame()
-    for row in all_sectors_top5.itertuples(): # change to metrics dataframe
+    for row in scored_df.itertuples(): # change to metrics dataframe
         if row.MarketCap < small_cap:
             small_cap_df = pd.concat(small_cap_df,row)
         break
