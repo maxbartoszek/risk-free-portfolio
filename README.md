@@ -8,7 +8,7 @@ This project implements a fully automated risk-free style portfolio builder, usi
 * 1.6 Sharpe ratio
 Extremely stable performance during choppy market conditions
 
-🔧 What This Model Does
+What This Model Does
 
 This pipeline generates a minimum-variance portfolio using real North American equities. It includes:
 
